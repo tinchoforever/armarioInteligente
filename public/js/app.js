@@ -14,6 +14,10 @@ angular.module('armarioApp', [
       }).when('/loader',{
          templateUrl:'partials/loader.html',
          controller: 'LoaderController'
+      })
+      .when('/checkout',{
+         templateUrl:'partials/checkout.html',
+         controller: 'CheckoutController'
       }).when('/thanks',{
          templateUrl:'partials/thanks.html',
          controller: 'ThanksController'
