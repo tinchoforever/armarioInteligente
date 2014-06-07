@@ -22,7 +22,7 @@ angular.module('armarioApp.controllers')
     clothesService.subscribe(function(id){
          $scope.clothes++;
          $scope.items.push(clothesService.get(id));
-         $scope.counter = 120;
+         $scope.counter = 200;
     });
 
 

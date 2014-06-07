@@ -1,7 +1,7 @@
 angular.module('armarioApp.controllers')
-  .controller('ThanksController', function($scope, $timeout, $location) {
+  .controller('ThanksController', function($scope, $timeout, clothesService,  $location) {
     clothesService.clearCallbacks();
-    $scope.counter = 15;
+    $scope.counter = 5;
     $scope.onTimeout = function(){
 
       if ($scope.counter-1 < 0){

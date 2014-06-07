@@ -3,7 +3,7 @@ angular.module('armarioApp.controllers')
     function($scope, $location, $timeout, clothesService) {
 
 
-    $scope.counter = 999;
+    $scope.counter = 200;
     $scope.clothes = clothesService.clothes.length;
 
     $scope.items= clothesService.clothes;
@@ -28,8 +28,11 @@ angular.module('armarioApp.controllers')
         if(c.id.indexOf(id)> 0){
           $scope.items.splice(i, 1);
         }
+        if ($scope.items.length === 0){
+            $location.path('/thanks');
+        }
       };
-      $scope.counter = 15;
+      $scope.counter = 200;
 
     });
 
