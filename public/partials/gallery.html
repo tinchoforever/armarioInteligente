@@ -1,7 +1,41 @@
-<h3> Sugerencias para hoy! </h3>
-<div id="owl-demo" style="display:none">
+<h3> Sugerencias para <i class="icon-cloud"></i></h3>
+
+<h5>Torso</h5>
+<div id="owl-demo-1" class="owl-demo" style="display:none">
+
   <div class="item" ng-repeat="item in items">
-    <h3 class="title"> {{item.title}} </h3>
+    <h5 class="title"> {{item.title}} </h5>
+    <div class="box">
+      <img ng-src="{{item.src}}"  alt="Owl Image">
+    </div>
+  </div>
+</div>
+ <h5> Pantalones </h5>
+<div id="owl-demo-2" class="owl-demo" style="display:none">
+
+  <div class="item" ng-repeat="item in items">
+    <h5 class="title"> {{item.title}} </h5>
+    <div class="box">
+      <img ng-src="{{item.src}}"  alt="Owl Image">
+    </div>
+  </div>
+</div>
+<h5> Zapatos </h5>
+<div id="owl-demo-3" class="owl-demo" style="display:none">
+
+  <div class="item" ng-repeat="item in items">
+    <h5 class="title"> {{item.title}} </h5>
+    <div class="box">
+      <img ng-src="{{item.src}}"  alt="Owl Image">
+    </div>
+  </div>
+</div>
+
+  <h5> Accesorios</h5>
+<div id="owl-demo-4" class="owl-demo" style="display:none">
+
+  <div class="item" ng-repeat="item in accesories">
+    <h5 class="title"> {{item.title}} </h5>
     <div class="box">
       <img ng-src="{{item.src}}"  alt="Owl Image">
     </div>

@@ -36,10 +36,6 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-// app.post('/api/v1/users', greenUsersAPI.add);
-// app.post('/api/v1/users/push', greenUsersAPI.push);
-// app.get('/api/v1/users/all', greenUsersAPI.all);
-
 
 var server = http.createServer(app);
 server.listen(app.get('port'), function(){
@@ -72,13 +68,7 @@ var id = '';
 // List of all RFID ids read
 var ids = [];
 
-// "0C0034928822";
-// "0C006244577D";
-// "0C004223F895";
-// "0C0047D252CB";
-// "0C00622A91D5";
-// "0C00416F6D4F";
-// "0C00505FF5F6";
+
 fs.createReadStream('/dev/cu.usbmodemfa141', { bufferSize: 1 })
 
 .on('open', function(fd) {
@@ -101,7 +91,10 @@ fs.createReadStream('/dev/cu.usbmodemfa141', { bufferSize: 1 })
   chunk = chunk.toString('ascii').match(/\w*/)[0]; // Only keep hex chars
   if ( chunk.length == 0 ) { // Found non-hex char
     if ( id.length > 0 ) { // The ID isn't blank
-      ids.push(id); // Store the completely reconstructed ID
+      // Store the completely reconstructed ID
+      if (mainSocket){
+            mainSocket.emit("new-clothe", {id:id});
+      }
       sys.puts(id);
     }
     id = ''; // Prepare for the next ID read

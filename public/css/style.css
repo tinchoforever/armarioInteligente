@@ -15,3 +15,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+div.owl-demo img {
+    width: 26%;
+    /* float: right; */
+}
