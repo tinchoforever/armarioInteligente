@@ -44,7 +44,7 @@ angular.module('armarioApp.controllers')
     });
     $scope.pantalones.push({
       title: "Jean Recto",
-      src:  "/img/clothes/pantalon-1.JPG"
+      src:  "/img/clothes/pantalon-recto.png"
     });
 
     $scope.shoes= [];

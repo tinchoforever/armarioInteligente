@@ -1,15 +1,19 @@
 <!-- DATA VIZ -->
-<div>
-  <section ng-hide="loading" class="module data-viz-module">
-      <h3> Ingresaste </h3>
-      <h1> {{items.length}} prendas </h1>
-      <h3> Te espero unos {{counter}} segundos... </h3>
+<div class="loader">
+  <div>
+    <section ng-hide="loading" class="module data-viz-module">
+        <h3> Agregaste </h3>
+        <h1> {{items.length}} prendas </h1>
+        <h3> Te espero unos {{counter}} segundos... </h3>
 
-      <div class="item" ng-repeat="item in items">
-        <h3 class="title"> {{item.title}} </h3>
-        <div class="box">
-          <img ng-src="{{item.src}}"  alt="Owl Image">
-        </div>
+      <div class="row">
+          <div class="item" ng-repeat="item in items">
+            <div class="box six columns">
+              <img ng-src="{{item.src}}"  alt="Owl Image">
+              <h5 class="title"> {{item.title}} </h5>
+            </div>
+          </div>
       </div>
-  </section>
+    </section>
+  </div>
 </div>
