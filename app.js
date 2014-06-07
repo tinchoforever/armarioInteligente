@@ -63,26 +63,50 @@ io.sockets.on('connection', function(socket) {
 
 });
 
+// NodeJS includes
+var sys = require('sys');
+var fs = require('fs');
 
-// var SerialPort = require("serialport").SerialPort
-// var serialPort = new SerialPort("/dev/cu.usbmodemfa141", {
-//     baudrate: 9600
-// });
-// serialPort.on("open", function() {
-//     console.log('Arudino online!');
-//     serialPort.on('data', function(data) {
-//         // console.log(data);
-//         var isBottleOn =  parseInt(data);
-//         if (isBottleOn) {
-//           console.log('Yes! > A Bottle is inside the container :-)');
-//           if (mainSocket){
-//             mainSocket.emit("new-bottle", {});
-//           }
-//         }
-//         else{
-//           console.log('No bottle in the container :-(')
-//         }
+// Stores the RFID id as it reconstructs from the stream.
+var id = '';
+// List of all RFID ids read
+var ids = [];
 
-//     });
-// });
+// "0C0034928822";
+// "0C006244577D";
+// "0C004223F895";
+// "0C0047D252CB";
+// "0C00622A91D5";
+// "0C00416F6D4F";
+// "0C00505FF5F6";
+fs.createReadStream('/dev/cu.usbmodemfa141', { bufferSize: 1 })
+
+.on('open', function(fd) {
+  sys.puts('Begin scanning RFID tags.');
+})
+
+.on('end', function() {
+  sys.puts('End of data stream.');
+})
+
+.on('close', function() {
+  sys.puts('Closing stream.');
+})
+
+.on('error', function(error) {
+  sys.debug(error);
+})
+
+.on('data', function(chunk) {
+  chunk = chunk.toString('ascii').match(/\w*/)[0]; // Only keep hex chars
+  if ( chunk.length == 0 ) { // Found non-hex char
+    if ( id.length > 0 ) { // The ID isn't blank
+      ids.push(id); // Store the completely reconstructed ID
+      sys.puts(id);
+    }
+    id = ''; // Prepare for the next ID read
+    return;
+  }
+  id += chunk; // Concat hex chars to the forming ID
+});
 
