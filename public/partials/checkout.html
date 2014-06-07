@@ -1,0 +1,13 @@
+<!-- DATA VIZ -->
+<section ng-hide="loading" class="module data-viz-module">
+    <h3> Estas sacando... </h3>
+    <h1> {{items.length}} prendas </h1>
+    <h3> Te espero unos {{counter}} segundos... </h3>
+
+    <div class="item" ng-repeat="item in items">
+      <h3 class="title"> {{item.title}} </h3>
+      <div class="box">
+        <img ng-src="{{item.src}}"  alt="Owl Image">
+      </div>
+    </div>
+</section>

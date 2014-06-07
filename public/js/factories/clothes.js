@@ -1,0 +1,25 @@
+angular.module('armarioApp.factories')
+  .factory('clothesService', function($http){
+  console.log('clotheservice');
+  var factory = {};
+
+  var socket = new io.connect("http://localhost:3000");
+  socket.on('new-clothes', function(msg){
+    console.log('new-clothes', msg);
+    factory.callback();
+  });
+  factory.subscribe = function(callback){
+    factory.callback = callback;
+  };
+  factory.onId = function(callback){
+    factory.idCallback = callback;
+  };
+  factory.clearCallbacks = function(){
+    factory.callback = function(){};
+    factory.idCallback = function(){};
+  };
+
+  factory.clearCallbacks();
+
+  return factory;
+});
