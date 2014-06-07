@@ -17,6 +17,9 @@ angular.module('armarioApp', [
       }).when('/thanks',{
          templateUrl:'partials/thanks.html',
          controller: 'ThanksController'
+      }).when('/gallery',{
+         templateUrl:'partials/gallery.html',
+         controller: 'GalleryController'
       });
 }]);
 

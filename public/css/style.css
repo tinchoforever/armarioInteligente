@@ -6,3 +6,12 @@ However, this blank file is available if you prefer
 div.main.row {
   text-align: center;
 }
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}

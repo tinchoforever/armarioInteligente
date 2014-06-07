@@ -1,9 +1,9 @@
-angular.module('tachoApp.controllers')
-  .controller('MainController', function($scope, $location, trashService, pointsFactory) {
+angular.module('armarioApp.controllers')
+  .controller('MainController', function($scope, $location, clothesService) {
 
- trashService.subscribe(function(e,d){
+ clothesService.subscribe(function(e,d){
     $scope.$apply(function(){
-          trashService.clearCallbacks();
+          clothesService.clearCallbacks();
           $location.path('/loader');
     });
   });
