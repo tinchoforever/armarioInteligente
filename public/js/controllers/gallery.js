@@ -16,6 +16,55 @@ angular.module('armarioApp.controllers')
       src:  "/img/clothes/accesorio-4.jpg"
     });
 
+
+    $scope.torso= [];
+
+    $scope.torso.push({
+      title: "Campera Azul",
+      src: "/img/clothes/campera-azul-1.JPG"
+    });
+    $scope.torso.push({
+      title: "Campera Blanca",
+      src:  "/img/clothes/campera-blanca.JPG"
+    });
+    $scope.torso.push({
+      title: "Sweater Rosa",
+      src:  "/img/clothes/sweter-rosa.JPG"
+    });
+
+    $scope.pantalones= [];
+
+    $scope.pantalones.push({
+      title: "Jean Chupin Desgastado",
+      src: "/img/clothes/jean-sin-rayas.JPG"
+    });
+    $scope.pantalones.push({
+      title: "Jean Azul",
+      src:  "/img/clothes/pantalon-2.JPG"
+    });
+    $scope.pantalones.push({
+      title: "Jean Recto",
+      src:  "/img/clothes/pantalon-1.JPG"
+    });
+
+    $scope.shoes= [];
+
+
+    $scope.shoes.push({
+      title: "Botas Cordones",
+      src:  "/img/clothes/botas-cordones-1.JPG"
+    });
+
+    $scope.shoes.push({
+      title: "Botas Evillas",
+      src:  "/img/clothes/botas-evishas.JPG"
+    });
+
+    $scope.shoes.push({
+      title: "Zapatillas Nike Free",
+      src: "/img/clothes/zapatillas.png"
+    });
+
     $scope.accesories= [];
 
     $scope.accesories.push({
