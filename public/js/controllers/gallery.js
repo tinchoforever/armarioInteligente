@@ -68,8 +68,8 @@ angular.module('armarioApp.controllers')
     $scope.accesories= [];
 
     $scope.accesories.push({
-      title: "Bufanda rosa",
-      src: "/img/clothes/accesorio-2.jpg"
+      title: "Cartera de Cuero",
+      src: "/img/clothes/accesorio-1.jpg"
     });
     $scope.accesories.push({
       title: "Cinturon Cuero",
@@ -79,6 +79,28 @@ angular.module('armarioApp.controllers')
       title: "Collar cubo",
       src:  "/img/clothes/accesorio-4.jpg"
     });
+
+    $scope.show = function(i){
+      var before = i-1;
+        $("#owl-demo-1").hide();
+        $("#owl-demo-2").hide();
+        $("#owl-demo-3").hide();
+        $("#owl-demo-4").hide();
+        $("#owl-demo-" + before).hide();
+        $("#owl-demo-" + i).show();
+
+    }
+    $scope.back = function(i){
+
+        $("#owl-demo-1").hide();
+        $("#owl-demo-2").hide();
+        $("#owl-demo-3").hide();
+        $("#owl-demo-4").hide();
+        $("#owl-demo-" + i).show();
+
+
+
+    }
 
 
     $timeout(function(){
@@ -103,9 +125,9 @@ angular.module('armarioApp.controllers')
       });
 
       $("#owl-demo-1").show();
-      $("#owl-demo-2").show();
-      $("#owl-demo-3").show();
-      $("#owl-demo-4").show();
+      $("#owl-demo-2").hide();
+      $("#owl-demo-3").hide();
+      $("#owl-demo-4").hide();
 
 
   },1000);

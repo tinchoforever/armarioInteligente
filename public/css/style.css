@@ -20,3 +20,17 @@ div.owl-demo img {
     width: 26%;
     /* float: right; */
 }
+
+h5.category {
+  font-weight: bold;
+}
+div.box {
+    float: left;
+}
+div.box img {
+
+  max-width: 50%;
+  max-height: 350px;
+  padding: 0.5em;
+  border: 3px solid;
+}

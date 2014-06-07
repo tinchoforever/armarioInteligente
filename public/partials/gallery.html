@@ -1,43 +1,57 @@
 <h3> Sugerencias para <i class="icon-cloud"></i></h3>
 
-<h5>Torso</h5>
+<h5 class="category"><a ng-click="back(1)">Torso</a></h5>
 <div id="owl-demo-1" class="owl-demo" style="display:none">
 
   <div class="item" ng-repeat="item in torso">
     <h5 class="title"> {{item.title}} </h5>
     <div class="box">
       <img ng-src="{{item.src}}"  alt="Owl Image">
+       <p>  <div class="medium oval btn success">
+        <a ng-click="show(2)" href=""><i class="icon-check"></i></a></div>
+      </p>
     </div>
   </div>
 </div>
- <h5> Pantalones </h5>
+<h5 class="category"> <a ng-click="back(2)"> Pantalones </a> </h5>
 <div id="owl-demo-2" class="owl-demo" style="display:none">
 
   <div class="item" ng-repeat="item in pantalones">
     <h5 class="title"> {{item.title}} </h5>
     <div class="box">
       <img ng-src="{{item.src}}"  alt="Owl Image">
+       <p>  <div class="medium oval btn success">
+        <a ng-click="show(3)" href=""><i class="icon-check"></i></a></div>
+      </p>
     </div>
+
   </div>
 </div>
-<h5> Zapatos </h5>
+<h5 class="category"> <a ng-click="back(3)"> Zapatos </a> </h5>
 <div id="owl-demo-3" class="owl-demo" style="display:none">
 
   <div class="item" ng-repeat="item in shoes">
     <h5 class="title"> {{item.title}} </h5>
     <div class="box">
       <img ng-src="{{item.src}}"  alt="Owl Image">
+      <p>  <div class="medium oval btn success">
+        <a ng-click="show(4)" href=""><i class="icon-check"></i></a></div>
+      </p>
     </div>
   </div>
 </div>
 
-  <h5> Accesorios</h5>
+<h5 class="category"> <a ng-click="back(4)"> Accesorios</a></h5>
 <div id="owl-demo-4" class="owl-demo" style="display:none">
 
   <div class="item" ng-repeat="item in accesories">
     <h5 class="title"> {{item.title}} </h5>
     <div class="box">
       <img ng-src="{{item.src}}"  alt="Owl Image">
+       <p>  <div class="medium oval btn success">
+        <a href="#/checkout"><i class="icon-check"></i></a></div>
+      </p>
     </div>
   </div>
 </div>
+<div class="xlarge oval primary btn"><a ng-click="" href="#/checkout">Listo!</a></div>
